@@ -31,9 +31,20 @@ body {
   min-height: 100vh;
   padding: 28px clamp(20px, 4vw, 56px) 72px;
   background:
-    linear-gradient(135deg, rgba(38, 20, 12, 0.72), rgba(122, 75, 51, 0.44)),
+    linear-gradient(135deg, rgba(24, 16, 12, 0.8), rgba(70, 43, 31, 0.55)),
+    radial-gradient(circle at top left, rgba(255, 221, 189, 0.18), transparent 28%),
     url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80") center/cover;
   color: #fff9f4;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 1120px;
+  height: 1px;
+  margin: 72px auto 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.28), rgba(255,255,255,0));
 }
 
 .nav {
@@ -45,10 +56,22 @@ body {
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-family: "Noto Serif TC", serif;
   font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+}
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .nav-links {
@@ -70,6 +93,16 @@ body {
 .hero-content {
   max-width: 760px;
   margin: 12vh 0 0;
+}
+
+.hero-content::before {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f4d3b1, rgba(244, 211, 177, 0.25));
+  margin-bottom: 24px;
 }
 
 .eyebrow,
@@ -153,6 +186,12 @@ body {
   background: rgba(255, 255, 255, 0.12);
   color: #fff8f1;
   border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.button.ghost {
+  background: transparent;
+  color: #fff8f1;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .section {
