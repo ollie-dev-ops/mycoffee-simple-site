@@ -244,6 +244,94 @@ body {
   margin-top: 22px;
 }
 
+.visit-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.visit-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow);
+  border-radius: 24px;
+  padding: 28px;
+}
+
+.visit-card h3,
+.transit-list h4 {
+  margin-top: 0;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.info-list li {
+  display: grid;
+  gap: 6px;
+}
+
+.info-list span {
+  color: rgba(255, 245, 239, 0.68);
+  font-size: 0.95rem;
+}
+
+.info-list a,
+.visit-card a {
+  color: #fff5ef;
+}
+
+.visit-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.transit-list {
+  display: grid;
+  gap: 18px;
+}
+
+.transit-list h4 {
+  margin-bottom: 8px;
+}
+
+.transit-list p {
+  margin: 0;
+  color: rgba(255, 245, 239, 0.84);
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.map-card {
+  max-width: 1100px;
+  margin: 24px auto 0;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.map-card iframe {
+  display: block;
+  width: 100%;
+  min-height: 380px;
+  border: 0;
+}
+
 .footer {
   padding: 28px 20px 52px;
   text-align: center;
@@ -276,5 +364,9 @@ body {
   .section {
     padding-top: 68px;
     padding-bottom: 68px;
+  }
+
+  .map-card iframe {
+    min-height: 320px;
   }
 }
