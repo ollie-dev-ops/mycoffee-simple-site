@@ -65,20 +65,11 @@ body {
   letter-spacing: 0.02em;
 }
 
-.brand-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 46px;
+.brand-logo {
   height: 42px;
-  padding: 0 10px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #f0cfad, #b97c55);
-  color: #2c1d17;
-  font-weight: 800;
-  font-size: 0.86rem;
-  letter-spacing: 0.08em;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.18));
 }
 
 .nav-links {
