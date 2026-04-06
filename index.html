@@ -3,162 +3,254 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyCoffee 買咖啡｜中壢精品咖啡與巴斯克</title>
+    <title>MyCoffee 買咖啡｜中壢精品咖啡與手作巴斯克</title>
     <meta
       name="description"
-      content="MyCoffee 買咖啡位在中壢火車站附近，提供精品咖啡、手作巴斯克、線上訂位與來店資訊。"
+      content="MyCoffee 買咖啡位在中壢火車站附近，以溫暖細緻的精品咖啡與手作巴斯克，帶來舒服、可信任的日常精品咖啡體驗。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero">
-      <nav class="nav">
-        <div class="brand">
-          <img src="assets/logo-square-1.png" alt="MyCoffee 買咖啡 logo" class="brand-logo" />
-          <span>MyCoffee 買咖啡</span>
-        </div>
-        <div class="nav-links">
-          <a href="#story">品牌故事</a>
-          <a href="#hours">營業時間</a>
-          <a href="#products">招牌商品</a>
-          <a href="#visit">來店資訊</a>
-        </div>
-      </nav>
+    <div class="page-shell">
+      <header class="hero" id="top">
+        <nav class="nav" aria-label="主導覽">
+          <a class="brand-lockup" href="#top" aria-label="MyCoffee 買咖啡 首頁">
+            <img src="assets/logo-composite.png" alt="MyCoffee 買咖啡" class="brand-logo" />
+          </a>
 
-      <div class="hero-content">
-        <p class="eyebrow">中壢火車站附近 · 精品咖啡 · 手作巴斯克</p>
-        <h1>把一杯好咖啡，留給想慢下來的你。</h1>
-        <p class="hero-text">
-          MyCoffee 買咖啡是一間位在中壢市區的咖啡店。
-          我們用乾淨順口的精品咖啡，搭配濃郁細緻的手作巴斯克，
-          讓每一次路過、碰面、或想安靜坐一下的時候，都有一個舒服的落點。
-        </p>
-        <div class="hero-points">
-          <span>中壢火車站步行可到</span>
-          <span>精品咖啡 × 手作巴斯克</span>
-          <span>線上訂位更方便</span>
-        </div>
-        <div class="hero-actions">
-          <a class="button primary" href="https://shop.ichefpos.com/store/139TPDhT/reserve" target="_blank" rel="noreferrer">立即訂位</a>
-          <a class="button secondary" href="https://shop.ichefpos.com/store/139TPDhT/ordering" target="_blank" rel="noreferrer">查看線上菜單</a>
-          <a class="button ghost" href="#visit">查看地址與交通</a>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <section id="story" class="section section-light">
-        <div class="section-heading">
-          <p class="section-kicker">我們的故事</p>
-          <h2>從想分享一杯真正喜歡的咖啡開始。</h2>
-        </div>
-        <div class="story-grid">
-          <article class="card">
-            <h3>我們在做的事</h3>
-            <p>
-              買咖啡想做的很簡單：把好喝、喝得懂、也喝得舒服的精品咖啡帶進大家的日常。
-              不用很懂風味輪，也可以找到自己喜歡的那一杯。
-            </p>
-          </article>
-          <article class="card">
-            <h3>我們的堅持</h3>
-            <p>
-              從選豆、烘焙風味方向，到萃取與甜點搭配，我們在意每一個細節。
-              希望你喝到的不是炫技，而是真正順口、耐喝、會想再回來的一杯咖啡。
-            </p>
-          </article>
-          <article class="card">
-            <h3>我們想留下的感覺</h3>
-            <p>
-              這裡不只是買咖啡的地方，也是能暫停一下、聊聊天、重新整理節奏的小角落。
-              一杯咖啡、一塊巴斯克，就足夠讓一天變得比較好。
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="hours" class="section section-dark">
-        <div class="section-heading narrow">
-          <p class="section-kicker">營業時間</p>
-          <h2>歡迎在你想喘口氣的時候來坐坐。</h2>
-        </div>
-        <div class="hours-card">
-          <div>
-            <p class="hours-label">週一至週五</p>
-            <p class="hours-time">09:00 – 18:00</p>
+          <div class="nav-links">
+            <a href="#story">品牌感受</a>
+            <a href="#signature">招牌商品</a>
+            <a href="#hours">營業資訊</a>
+            <a href="#visit">來店資訊</a>
           </div>
-          <div>
-            <p class="hours-label">週六至週日</p>
-            <p class="hours-time">12:00 – 18:00</p>
-          </div>
-          <div>
-            <p class="hours-label">訂位方式</p>
-            <p class="hours-time hours-link"><a href="https://shop.ichefpos.com/store/139TPDhT/reserve" target="_blank" rel="noreferrer">線上預約</a></p>
-          </div>
-        </div>
-        <p class="hours-note">
-          若有節日調整或特別活動，會另外公告。想喝咖啡前，也歡迎先私訊確認。
-        </p>
-      </section>
+        </nav>
 
-      <section id="products" class="section section-light">
-        <div class="section-heading">
-          <p class="section-kicker">招牌商品</p>
-          <h2>先從這幾款開始認識買咖啡。</h2>
-        </div>
-
-        <div class="product-grid">
-          <article class="product-card featured">
-            <span class="tag">精品咖啡</span>
-            <h3>手沖單品咖啡</h3>
-            <p>
-              精選不同產區與處理法的咖啡豆，帶出花香、柑橘調、莓果感或可可尾韻。
-              每一杯都保留產地個性，適合喜歡慢慢品味層次的人。
+        <div class="hero-grid">
+          <section class="hero-copy" aria-labelledby="hero-title">
+            <p class="eyebrow">MyCoffee 買咖啡 · 中壢火車站附近</p>
+            <h1 id="hero-title">暖色精品，留給每一個想慢下來的人。</h1>
+            <p class="hero-text">
+              這裡有乾淨順口的精品咖啡、細緻濃郁的手作巴斯克，
+              也有一種不用很懂咖啡，依然能安心走進來、舒服坐下的節奏。
             </p>
-          </article>
 
-          <article class="product-card">
-            <span class="tag">精品咖啡</span>
-            <h3>濃縮咖啡系列</h3>
-            <p>
-              濃縮、拿鐵、澳白到美式，我們用穩定乾淨的配方豆，做出厚實但不苦澀的日常咖啡。
-            </p>
-          </article>
-
-          <article class="product-card">
-            <span class="tag dessert">甜點</span>
-            <h3>招牌巴斯克乳酪蛋糕</h3>
-            <p>
-              外層帶有迷人焦香，內裡濕潤綿密、乳酪香氣濃厚。
-              不管配黑咖啡還是拿鐵，都很剛好，是店裡人氣很高的固定班底。
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="visit" class="section section-dark visit-section">
-        <div class="visit-shell">
-          <div class="visit-intro">
-            <p class="section-kicker">來店資訊</p>
-            <h2>中壢火車站附近，喝咖啡、吃巴斯克、約朋友見面都剛剛好。</h2>
-            <p class="visit-lead">
-              如果你是第一次來，不用擔心難找。我們就在中壢火車站附近，步行可到；想先卡位，也可以直接線上訂位。
-            </p>
-            <div class="visit-actions">
-              <a class="button primary" href="https://shop.ichefpos.com/store/139TPDhT/reserve" target="_blank" rel="noreferrer">立即訂位</a>
-              <a class="button secondary" href="https://maps.google.com/?q=%E6%A1%83%E5%9C%92%E5%B8%82%E4%B8%AD%E5%A3%A2%E5%8D%80%E4%B8%AD%E5%A4%AE%E6%9D%B1%E8%B7%AF52%E8%99%9F" target="_blank" rel="noreferrer">打開地圖</a>
+            <div class="hero-actions">
+              <a
+                class="button primary"
+                href="https://shop.ichefpos.com/store/139TPDhT/reserve"
+                target="_blank"
+                rel="noopener noreferrer"
+                >立即訂位</a
+              >
+              <a
+                class="button secondary"
+                href="https://shop.ichefpos.com/store/139TPDhT/ordering"
+                target="_blank"
+                rel="noopener noreferrer"
+                >查看線上菜單</a
+              >
+              <a class="button ghost" href="#visit">打開地址與交通</a>
             </div>
+
+            <ul class="hero-highlights" aria-label="品牌重點">
+              <li>精品咖啡 × 手作甜點</li>
+              <li>步行可達中壢火車站</li>
+              <li>線上訂位與點餐都方便</li>
+            </ul>
+          </section>
+
+          <aside class="hero-showcase" aria-label="品牌資訊">
+            <div class="showcase-top">
+              <img src="assets/logo-square-1.png" alt="MyCoffee 買咖啡品牌標誌" class="showcase-stamp" />
+              <div>
+                <p class="showcase-label">品牌門面</p>
+                <p class="showcase-title">MyCoffee 買咖啡</p>
+              </div>
+            </div>
+
+            <div class="showcase-panel">
+              <p class="panel-kicker">品牌感受</p>
+              <p class="panel-quote">
+                有質感但不距離，有細節但不炫技。
+                一杯咖啡、一塊巴斯克，就很剛好。
+              </p>
+            </div>
+
+            <div class="showcase-metrics" aria-label="店家特色">
+              <article>
+                <span>主打</span>
+                <strong>精品咖啡</strong>
+              </article>
+              <article>
+                <span>人氣</span>
+                <strong>招牌巴斯克</strong>
+              </article>
+              <article>
+                <span>位置</span>
+                <strong>中央東路 52 號</strong>
+              </article>
+            </div>
+          </aside>
+        </div>
+      </header>
+
+      <main>
+        <section class="section trust-strip" aria-label="服務入口">
+          <div class="trust-item">
+            <span class="trust-title">訂位</span>
+            <a
+              href="https://shop.ichefpos.com/store/139TPDhT/reserve"
+              target="_blank"
+              rel="noopener noreferrer"
+              >線上安排座位</a
+            >
+          </div>
+          <div class="trust-item">
+            <span class="trust-title">菜單</span>
+            <a
+              href="https://shop.ichefpos.com/store/139TPDhT/ordering"
+              target="_blank"
+              rel="noopener noreferrer"
+              >立即查看線上點餐</a
+            >
+          </div>
+          <div class="trust-item">
+            <span class="trust-title">地址</span>
+            <a
+              href="https://maps.google.com/?q=%E6%A1%83%E5%9C%92%E5%B8%82%E4%B8%AD%E5%A3%A2%E5%8D%80%E4%B8%AD%E5%A4%AE%E6%9D%B1%E8%B7%AF52%E8%99%9F"
+              target="_blank"
+              rel="noopener noreferrer"
+              >桃園市中壢區中央東路 52 號</a
+            >
+          </div>
+          <div class="trust-item">
+            <span class="trust-title">電話</span>
+            <a href="tel:034226209">03 4226209</a>
+          </div>
+        </section>
+
+        <section class="section section-light" id="story">
+          <div class="section-heading section-heading-left">
+            <p class="section-kicker">品牌感受</p>
+            <h2>不是高冷的精品咖啡，而是讓人願意一來再來的舒服日常。</h2>
+            <p>
+              依照 MyCoffee CIS 的核心，網站不只提供資訊，也要先讓人看見品牌、感受到溫度，再清楚找到行動入口。
+              因此整體以暖色精品、乾淨留白、明確 Logo 與容易理解的導流做為主軸。
+            </p>
+          </div>
+
+          <div class="story-grid">
+            <article class="story-card emphasis">
+              <h3>好靠近</h3>
+              <p>
+                不需要先研究風味輪，也不需要很懂咖啡。你只要想喝一杯舒服的咖啡，就可以直接走進來。
+              </p>
+            </article>
+            <article class="story-card">
+              <h3>有細節</h3>
+              <p>
+                從萃取、配方到甜點搭配，細節都被好好照顧，但呈現方式保持柔和、清楚、不賣弄。
+              </p>
+            </article>
+            <article class="story-card">
+              <h3>想停留</h3>
+              <p>
+                這裡適合見朋友、休息一下、或給自己一段放慢節奏的時間，讓喝咖啡回到舒服本身。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section-dark signature-section" id="signature">
+          <div class="section-heading">
+            <p class="section-kicker">招牌商品</p>
+            <h2>先從這幾樣開始，認識 MyCoffee 買咖啡。</h2>
+          </div>
+
+          <div class="signature-grid">
+            <article class="signature-card signature-featured">
+              <span class="tag">精品咖啡</span>
+              <h3>手沖單品咖啡</h3>
+              <p>
+                精選不同產區與處理法，保留花香、果酸、可可調與尾韻層次，讓每杯都有被慢慢喝完的理由。
+              </p>
+              <ul>
+                <li>適合想好好感受風味細節的人</li>
+                <li>乾淨、平衡、可親近</li>
+              </ul>
+            </article>
+
+            <article class="signature-card">
+              <span class="tag">日常首選</span>
+              <h3>濃縮咖啡系列</h3>
+              <p>
+                從美式、拿鐵到澳白，以穩定配方呈現厚實卻不苦澀的口感，日常喝也很順。
+              </p>
+            </article>
+
+            <article class="signature-card dessert-card">
+              <span class="tag dessert">人氣甜點</span>
+              <h3>招牌巴斯克乳酪蛋糕</h3>
+              <p>
+                外層帶焦香、內裡濕潤綿密，配黑咖啡或奶咖都剛剛好，是許多人來店會直接想點的一塊。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section-light info-section" id="hours">
+          <div class="info-layout">
+            <div class="info-copy">
+              <p class="section-kicker">營業資訊</p>
+              <h2>想喝的時候，有一個可信任又舒服的地方可以去。</h2>
+              <p>
+                官網首頁應該讓人快速完成判斷：現在營業嗎？能不能訂位？第一次去會不會難找？
+                所以我們把時間、聯絡方式與交通入口整理成清楚的卡片式資訊。
+              </p>
+            </div>
+
+            <div class="hours-shell" aria-label="營業資訊卡片">
+              <article class="hours-card">
+                <span>週一至週五</span>
+                <strong>09:00 – 18:00</strong>
+              </article>
+              <article class="hours-card">
+                <span>週六至週日</span>
+                <strong>12:00 – 18:00</strong>
+              </article>
+              <article class="hours-card hours-card-link">
+                <span>線上訂位</span>
+                <a
+                  href="https://shop.ichefpos.com/store/139TPDhT/reserve"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >立即預約座位</a
+                >
+              </article>
+              <article class="hours-card hours-card-note">
+                <span>提醒</span>
+                <strong>節日或活動時間如有調整，請先看公告或來電確認。</strong>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-visit" id="visit">
+          <div class="section-heading section-heading-left narrow-left">
+            <p class="section-kicker">來店資訊</p>
+            <h2>中壢火車站附近，適合喝咖啡、吃甜點，也適合約一場剛剛好的見面。</h2>
           </div>
 
           <div class="visit-grid">
             <article class="visit-card contact-card">
-              <h3>聯絡方式</h3>
+              <h3>聯絡與導流</h3>
               <ul class="info-list">
                 <li>
                   <span>電話</span>
@@ -166,41 +258,57 @@
                 </li>
                 <li>
                   <span>地址</span>
-                  <a href="https://maps.google.com/?q=%E6%A1%83%E5%9C%92%E5%B8%82%E4%B8%AD%E5%A3%A2%E5%8D%80%E4%B8%AD%E5%A4%AE%E6%9D%B1%E8%B7%AF52%E8%99%9F" target="_blank" rel="noreferrer">桃園市中壢區中央東路 52 號</a>
+                  <a
+                    href="https://maps.google.com/?q=%E6%A1%83%E5%9C%92%E5%B8%82%E4%B8%AD%E5%A3%A2%E5%8D%80%E4%B8%AD%E5%A4%AE%E6%9D%B1%E8%B7%AF52%E8%99%9F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >桃園市中壢區中央東路 52 號</a
+                  >
                 </li>
                 <li>
-                  <span>訂位</span>
-                  <a href="https://shop.ichefpos.com/store/139TPDhT/reserve" target="_blank" rel="noreferrer">線上訂位連結</a>
-                </li>
-                <li>
-                  <span>菜單</span>
-                  <a href="https://shop.ichefpos.com/store/139TPDhT/ordering" target="_blank" rel="noreferrer">查看線上菜單</a>
+                  <span>線上菜單</span>
+                  <a
+                    href="https://shop.ichefpos.com/store/139TPDhT/ordering"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >查看 iCHEF 點餐頁</a
+                  >
                 </li>
                 <li>
                   <span>Instagram</span>
-                  <a href="https://www.instagram.com/mycoffeetaiwan" target="_blank" rel="noreferrer">@mycoffeetaiwan</a>
+                  <a
+                    href="https://www.instagram.com/mycoffeetaiwan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >@mycoffeetaiwan</a
+                  >
                 </li>
                 <li>
                   <span>Facebook</span>
-                  <a href="https://www.facebook.com/mycoffeetaiwan/" target="_blank" rel="noreferrer">MyCoffee Taiwan</a>
+                  <a
+                    href="https://www.facebook.com/mycoffeetaiwan/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >MyCoffee Taiwan</a
+                  >
                 </li>
               </ul>
             </article>
 
             <article class="visit-card transit-card">
-              <h3>怎麼來最方便？</h3>
+              <h3>第一次來也很容易</h3>
               <div class="transit-list">
                 <div>
-                  <h4>火車來最直覺</h4>
-                  <p>店面靠近中壢火車站，出站後步行幾分鐘就能到，約朋友碰面也很方便。</p>
+                  <h4>火車來最方便</h4>
+                  <p>靠近中壢火車站，出站後步行幾分鐘即可抵達，見面或臨時想坐坐都很順路。</p>
                 </div>
                 <div>
-                  <h4>開車也 OK</h4>
-                  <p>周邊可找路邊停車格，附近也有付費停車場；若從火車站方向過來，斜對面公園周邊一帶可先留意停車位。</p>
+                  <h4>開車也能安排</h4>
+                  <p>周邊可找路邊停車格與付費停車場，假日建議預留一點找車位時間。</p>
                 </div>
                 <div>
-                  <h4>第一次來建議</h4>
-                  <p>直接導航「桃園市中壢區中央東路 52 號」即可。假日建議先訂位，再出發會更從容。</p>
+                  <h4>先訂位更從容</h4>
+                  <p>若是週末、朋友聚會或第一次來，先線上訂位會更安心，也更方便安排時間。</p>
                 </div>
               </div>
             </article>
@@ -214,14 +322,19 @@
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-brand">
+          <img src="assets/logo-composite.png" alt="MyCoffee 買咖啡" class="footer-logo" />
+          <p>暖色精品、日常可親、讓人想停留的咖啡店。</p>
         </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <p>MyCoffee 買咖啡 © 2026</p>
-      <p>中壢精品咖啡、巴斯克、來店資訊與線上訂位。</p>
-
-    </footer>
+        <div class="footer-meta">
+          <p>MyCoffee 買咖啡 © 2026</p>
+          <p>中壢精品咖啡、手作巴斯克、線上訂位與來店資訊。</p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
