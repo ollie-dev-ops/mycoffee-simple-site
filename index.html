@@ -27,6 +27,7 @@
           <div class="nav-links">
             <a href="#story">品牌感受</a>
             <a href="#signature">招牌商品</a>
+            <a href="#bean-ai">AI 選豆</a>
             <a href="#hours">營業資訊</a>
             <a href="#visit">來店資訊</a>
           </div>
@@ -205,6 +206,137 @@
           </div>
         </section>
 
+        <section class="section bean-ai-section" id="bean-ai">
+          <div class="section-heading section-heading-left">
+            <p class="section-kicker">AI 選豆</p>
+            <h2>不用先懂風味輪，30 秒找到今天適合你的豆子。</h2>
+            <p>
+              這不是炫技型 AI，而是把 MyCoffee 的專業選豆邏輯，整理成顧客看得懂、玩得起來、也願意下單的互動流程。
+            </p>
+          </div>
+
+          <div class="bean-ai-layout">
+            <section class="quiz-panel" aria-labelledby="quiz-title">
+              <div class="quiz-panel-head">
+                <p class="quiz-kicker">Bean Match</p>
+                <h3 id="quiz-title">回答 3 個問題，系統就幫你配豆</h3>
+                <p>先選味道，再選口感，最後看你怕不怕酸。</p>
+              </div>
+
+              <form class="quiz-form" id="bean-quiz-form">
+                <fieldset class="quiz-step">
+                  <legend>1. 你今天想喝哪一種味道？</legend>
+                  <div class="option-grid option-grid-2">
+                    <label class="option-card">
+                      <input type="radio" name="flavor" value="果香" />
+                      <span class="option-emoji">🍓</span>
+                      <span class="option-title">果香</span>
+                      <span class="option-copy">莓果、柑橘、果汁感</span>
+                    </label>
+                    <label class="option-card">
+                      <input type="radio" name="flavor" value="花香" />
+                      <span class="option-emoji">🌸</span>
+                      <span class="option-title">花香</span>
+                      <span class="option-copy">茉莉、茶感、細緻香氣</span>
+                    </label>
+                    <label class="option-card">
+                      <input type="radio" name="flavor" value="堅果" />
+                      <span class="option-emoji">🌰</span>
+                      <span class="option-title">堅果</span>
+                      <span class="option-copy">榛果、焦糖、順口</span>
+                    </label>
+                    <label class="option-card">
+                      <input type="radio" name="flavor" value="巧克力" />
+                      <span class="option-emoji">🍫</span>
+                      <span class="option-title">巧克力</span>
+                      <span class="option-copy">可可、甜感、厚度感</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="quiz-step">
+                  <legend>2. 你喜歡什麼口感？</legend>
+                  <div class="option-grid option-grid-3">
+                    <label class="option-card compact">
+                      <input type="radio" name="body" value="清爽" />
+                      <span class="option-title">清爽</span>
+                      <span class="option-copy">像茶感、乾淨輕盈</span>
+                    </label>
+                    <label class="option-card compact">
+                      <input type="radio" name="body" value="中等" />
+                      <span class="option-title">平衡</span>
+                      <span class="option-copy">順口、甜感與厚度剛好</span>
+                    </label>
+                    <label class="option-card compact">
+                      <input type="radio" name="body" value="濃厚" />
+                      <span class="option-title">濃厚</span>
+                      <span class="option-copy">厚實、飽滿、存在感高</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="quiz-step">
+                  <legend>3. 你怕酸嗎？</legend>
+                  <div class="option-grid option-grid-3">
+                    <label class="option-card compact">
+                      <input type="radio" name="acidity" value="不怕酸" />
+                      <span class="option-title">不怕酸</span>
+                      <span class="option-copy">想喝明亮、活潑一點</span>
+                    </label>
+                    <label class="option-card compact">
+                      <input type="radio" name="acidity" value="一點點" />
+                      <span class="option-title">一點點</span>
+                      <span class="option-copy">可以有些果酸，但別太尖</span>
+                    </label>
+                    <label class="option-card compact">
+                      <input type="radio" name="acidity" value="很怕酸" />
+                      <span class="option-title">很怕酸</span>
+                      <span class="option-copy">想要穩、順、厚一點</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="quiz-actions">
+                  <button class="button primary" type="submit">開始配豆</button>
+                  <button class="button ghost" type="button" id="quiz-reset">重選一次</button>
+                </div>
+              </form>
+            </section>
+
+            <aside class="result-panel" aria-live="polite" aria-labelledby="result-title">
+              <div class="result-head">
+                <p class="quiz-kicker">Recommendation</p>
+                <h3 id="result-title">你的專屬推薦會顯示在這裡</h3>
+                <p id="result-summary">先完成左邊 3 題，我就會依照 MyCoffee 目前豆單，推薦最適合你的 1～3 支豆。</p>
+              </div>
+
+              <div class="result-highlight" id="result-highlight">
+                <p class="highlight-label">今日老闆推薦</p>
+                <h4>日曬藝伎</h4>
+                <p>如果你想先喝一支最能代表精品層次的豆子，今天可以從這支開始。</p>
+              </div>
+
+              <div class="result-list" id="result-list">
+                <article class="bean-card featured">
+                  <span class="bean-badge">MVP 示意</span>
+                  <h4>先回答左邊問題</h4>
+                  <p>系統會依照風味、口感、怕酸程度，幫你排序推薦。</p>
+                </article>
+              </div>
+
+              <div class="result-actions">
+                <a
+                  class="button secondary"
+                  href="https://shop.ichefpos.com/store/139TPDhT/ordering"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >直接去 iCHEF 點餐</a
+                >
+              </div>
+            </aside>
+          </div>
+        </section>
+
         <section class="section section-light info-section" id="hours">
           <div class="info-layout">
             <div class="info-copy">
@@ -336,5 +468,162 @@
         </div>
       </footer>
     </div>
+    <script>
+      const BEANS_URL = "./beans.json";
+      const orderingUrl = "https://shop.ichefpos.com/store/139TPDhT/ordering";
+
+      const state = {
+        beans: [],
+      };
+
+      const form = document.getElementById("bean-quiz-form");
+      const resetButton = document.getElementById("quiz-reset");
+      const resultSummary = document.getElementById("result-summary");
+      const resultList = document.getElementById("result-list");
+      const resultHighlight = document.getElementById("result-highlight");
+
+      const acidityToRoast = {
+        不怕酸: ["淺焙", "中焙", "深焙"],
+        一點點: ["中焙", "淺焙", "深焙"],
+        很怕酸: ["中焙", "深焙", "淺焙"],
+      };
+
+      const acidityPenalty = {
+        不怕酸: { 高: 0, 中高: 0, 低中: 1, 低: 1 },
+        一點點: { 高: 1, 中高: 0, 低中: 0, 低: 1 },
+        很怕酸: { 高: 3, 中高: 2, 低中: 0, 低: 0 },
+      };
+
+      function scoreBean(bean, answers) {
+        let score = 0;
+        if (bean.flavor === answers.flavor) score += 4;
+        if (bean.body === answers.body) score += 3;
+
+        const roastOrder = acidityToRoast[answers.acidity] || [];
+        const roastIndex = roastOrder.indexOf(bean.roast);
+        score += roastIndex === -1 ? 0 : Math.max(0, 2 - roastIndex);
+
+        const penalty = acidityPenalty[answers.acidity]?.[bean.acidity] ?? 0;
+        score -= penalty;
+
+        if (bean.featured) score += 0.5;
+        return score;
+      }
+
+      function pickOwnerRecommendation(results, answers) {
+        const flavorFirst = results.find((bean) => bean.flavor === answers.flavor);
+        return flavorFirst || results[0] || null;
+      }
+
+      function renderHighlight(bean) {
+        if (!bean) return;
+        resultHighlight.innerHTML = `
+          <p class="highlight-label">今日老闆推薦</p>
+          <h4>${bean.name}</h4>
+          <p>${bean.description}</p>
+        `;
+      }
+
+      function renderResults(results, answers) {
+        if (!results.length) {
+          resultSummary.textContent = "目前沒有完全吻合的豆子，我先推薦接受度最高、最容易入口的幾款給你。";
+          resultList.innerHTML = `
+            <article class="bean-card featured">
+              <span class="bean-badge">暫時無交集</span>
+              <h4>請直接詢問店員</h4>
+              <p>你這次的偏好比較特別，現場我們可以再依照你平常喝的咖啡幫你微調。</p>
+            </article>
+          `;
+          return;
+        }
+
+        const topThree = results.slice(0, 3);
+        resultSummary.textContent = `你偏好 ${answers.flavor}、${answers.body}、${answers.acidity}，以下是最適合你的推薦。`;
+        resultList.innerHTML = topThree
+          .map((bean, index) => {
+            const badge = index === 0 ? "最推薦" : index === 1 ? "也很適合" : "可做第二選擇";
+            return `
+              <article class="bean-card ${index === 0 ? "featured" : ""}">
+                <span class="bean-badge">${badge}</span>
+                <h4>${bean.name}</h4>
+                <p>${bean.description}</p>
+                <ul class="bean-meta">
+                  <li><span>風味</span><strong>${bean.flavor}</strong></li>
+                  <li><span>焙度</span><strong>${bean.roast}</strong></li>
+                  <li><span>口感</span><strong>${bean.body}</strong></li>
+                  <li><span>價格</span><strong>$${bean.price}</strong></li>
+                </ul>
+                <p class="bean-tags">${bean.tags.join("・")}</p>
+                <a class="bean-link" href="${orderingUrl}" target="_blank" rel="noopener noreferrer">去 iCHEF 點餐</a>
+              </article>
+            `;
+          })
+          .join("");
+      }
+
+      function getAnswers() {
+        const formData = new FormData(form);
+        return {
+          flavor: formData.get("flavor"),
+          body: formData.get("body"),
+          acidity: formData.get("acidity"),
+        };
+      }
+
+      async function loadBeans() {
+        const response = await fetch(BEANS_URL, { cache: "no-store" });
+        const beans = await response.json();
+        state.beans = beans.filter((bean) => bean.available);
+      }
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const answers = getAnswers();
+        if (!answers.flavor || !answers.body || !answers.acidity) {
+          resultSummary.textContent = "請先把 3 題都選完，我才能幫你精準配豆。";
+          resultList.innerHTML = `
+            <article class="bean-card featured">
+              <span class="bean-badge">還差一步</span>
+              <h4>請完成 3 題選擇</h4>
+              <p>少一題就不夠準，我會想辦法把推薦維持在真正有幫助的範圍內。</p>
+            </article>
+          `;
+          return;
+        }
+
+        const ranked = [...state.beans]
+          .map((bean) => ({ ...bean, score: scoreBean(bean, answers) }))
+          .sort((a, b) => b.score - a.score);
+
+        const positive = ranked.filter((bean) => bean.score > 0);
+        const fallback = ranked.filter((bean) => ["綠山", "蜜處裡莊園", "耶家雪菲"].includes(bean.name));
+        const finalResults = (positive.length ? positive : fallback).slice(0, 3);
+        const ownerPick = pickOwnerRecommendation(finalResults, answers);
+
+        renderHighlight(ownerPick);
+        renderResults(finalResults, answers);
+      });
+
+      resetButton.addEventListener("click", () => {
+        form.reset();
+        resultSummary.textContent = "先完成左邊 3 題，我就會依照 MyCoffee 目前豆單，推薦最適合你的 1～3 支豆。";
+        resultHighlight.innerHTML = `
+          <p class="highlight-label">今日老闆推薦</p>
+          <h4>日曬藝伎</h4>
+          <p>如果你想先喝一支最能代表精品層次的豆子，今天可以從這支開始。</p>
+        `;
+        resultList.innerHTML = `
+          <article class="bean-card featured">
+            <span class="bean-badge">MVP 示意</span>
+            <h4>先回答左邊問題</h4>
+            <p>系統會依照風味、口感、怕酸程度，幫你排序推薦。</p>
+          </article>
+        `;
+      });
+
+      loadBeans().catch(() => {
+        resultSummary.textContent = "豆單資料讀取失敗，請稍後重整頁面或直接詢問現場店員。";
+      });
+    </script>
   </body>
 </html>
