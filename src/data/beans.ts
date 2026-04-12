@@ -12,7 +12,7 @@ export type Bean = {
   ichefCategory: string
   available: boolean
   featured: boolean
-  image: string
+  image?: string
   bestFor: string
 }
 
@@ -31,7 +31,6 @@ export const beans: Bean[] = [
     ichefCategory: "手烘咖啡",
     available: true,
     featured: true,
-    image: "/images/store-01.jpg",
     bestFor: "第一次想喝精品手沖、喜歡香氣細緻與乾淨尾韻的人",
   },
   {
@@ -48,7 +47,6 @@ export const beans: Bean[] = [
     ichefCategory: "手烘咖啡",
     available: true,
     featured: true,
-    image: "/images/store-04.jpg",
     bestFor: "喜歡水果香、想要有記憶點的清爽系咖啡愛好者",
   },
   {
@@ -65,7 +63,6 @@ export const beans: Bean[] = [
     ichefCategory: "手烘咖啡",
     available: true,
     featured: true,
-    image: "/images/store-04.jpg",
     bestFor: "想喝到精品咖啡代表作、重視香氣與層次感的人",
   },
   {
@@ -82,7 +79,6 @@ export const beans: Bean[] = [
     ichefCategory: "手烘咖啡",
     available: true,
     featured: true,
-    image: "/images/store-01.jpg",
     bestFor: "喜歡果香但又想多一點厚度與甜感的人",
   },
   {
@@ -99,7 +95,6 @@ export const beans: Bean[] = [
     ichefCategory: "手烘咖啡",
     available: true,
     featured: true,
-    image: "/images/dessert.png",
     bestFor: "平常愛喝順口咖啡、想從安全好喝開始的人",
   },
   {
@@ -116,7 +111,6 @@ export const beans: Bean[] = [
     ichefCategory: "手烘咖啡",
     available: true,
     featured: true,
-    image: "/images/store-01.jpg",
     bestFor: "怕酸、偏好穩定順口與厚實尾韻的人",
   },
 ]

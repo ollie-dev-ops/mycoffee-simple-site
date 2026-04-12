@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import { useMemo, useState } from "react"
 
@@ -26,9 +25,9 @@ const acidToRoast: Record<Acid, Bean["roast"]> = {
 }
 
 const acidCopy: Record<Acid, string> = {
-  不怕酸: "可以接受明亮酸值，推薦先看淺焙花果香系。",
-  一點點: "想保留香氣也要有平衡感，中焙會更舒服。",
-  很怕酸: "偏向厚實苦甜感，先避開太亮的酸值。",
+  不怕酸: "可以接受明亮酸值，先看淺焙花果香系。",
+  一點點: "想保留香氣也要有平衡感，中焙通常更舒服。",
+  很怕酸: "先避開太亮的酸值，往堅果、巧克力與中焙方向走。",
 }
 
 function scoreBean(bean: Bean, flavor: Flavor | null, body: Body | null, acid: Acid | null) {
@@ -62,129 +61,138 @@ export function BeanMatchExperience() {
 
   const topResults = results.slice(0, 3)
   const lead = topResults[0]?.bean
-
   const ready = Boolean(flavor && body && acid)
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-      <div className="space-y-6">
-        <Card className="relative overflow-hidden border border-white/10 bg-white/95 shadow-[0_30px_80px_-40px_rgba(32,22,10,0.5)] backdrop-blur">
-          <BorderBeam size={160} duration={10} colorFrom="#f7b267" colorTo="#7c5c45" />
-          <CardHeader className="space-y-3">
-            <Badge variant="outline" className="border-amber-200 bg-amber-50 text-amber-900">
-              30 秒完成 AI 選豆
-            </Badge>
-            <CardTitle className="text-2xl text-stone-900 sm:text-3xl">像聊天一樣，找到今天最適合你的豆子</CardTitle>
-            <CardDescription className="text-base leading-7 text-stone-600">
-              我們把店內專業選豆流程整理成 3 個問題。你不需要很懂咖啡，也能快速得到有理由的推薦。
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <QuestionGroup
-              title="1. 你今天想喝什麼味道？"
-              hint="先選主風味，系統會先幫你縮小範圍。"
-              options={flavorOptions}
-              value={flavor}
-              onChange={(value) => setFlavor(value as Flavor)}
-              emojiMap={{ 果香: "🍓", 花香: "🌸", 堅果: "🌰", 巧克力: "🍫" }}
-            />
+    <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+      <Card className="relative overflow-hidden border border-white/60 bg-white/92 shadow-[0_30px_90px_-45px_rgba(32,22,10,0.45)]">
+        <BorderBeam size={160} duration={10} colorFrom="#f7b267" colorTo="#7c5c45" />
+        <CardHeader className="space-y-3">
+          <Badge variant="outline" className="border-amber-200 bg-amber-50 text-amber-900">
+            3 個問題，30 秒完成
+          </Badge>
+          <CardTitle className="text-2xl text-stone-900 sm:text-3xl">像店員在旁邊引導你一樣，慢慢縮小選擇</CardTitle>
+          <CardDescription className="text-base leading-7 text-stone-600">
+            先決定主風味，再補口感和酸值偏好。問題不多，答案也都很直覺，手機上操作會特別順。
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <QuestionGroup
+            title="1. 你今天想喝什麼味道？"
+            hint="這一題會先決定你偏向花香、果香，還是更穩定的堅果與巧克力系。"
+            options={flavorOptions}
+            value={flavor}
+            onChange={(value) => setFlavor(value as Flavor)}
+            emojiMap={{ 果香: "🍓", 花香: "🌸", 堅果: "🌰", 巧克力: "🍫" }}
+          />
 
-            <Separator className="bg-stone-200" />
+          <Separator className="bg-stone-200" />
 
-            <QuestionGroup
-              title="2. 你喜歡什麼口感？"
-              hint="從像茶一樣清爽，到像拿鐵基底一樣厚實。"
-              options={bodyOptions}
-              value={body}
-              onChange={(value) => setBody(value as Body)}
-              emojiMap={{ 清爽: "🍃", 中等: "⚖️", 濃厚: "☕" }}
-            />
+          <QuestionGroup
+            title="2. 你喜歡什麼口感？"
+            hint="從像茶一樣清爽，到更有厚度、比較適合奶感或濃郁風味。"
+            options={bodyOptions}
+            value={body}
+            onChange={(value) => setBody(value as Body)}
+            emojiMap={{ 清爽: "🍃", 中等: "⚖️", 濃厚: "☕" }}
+          />
 
-            <Separator className="bg-stone-200" />
+          <Separator className="bg-stone-200" />
 
-            <QuestionGroup
-              title="3. 你怕酸嗎？"
-              hint="這一題會影響焙度與酸值推薦。"
-              options={acidOptions}
-              value={acid}
-              onChange={(value) => setAcid(value as Acid)}
-              emojiMap={{ 不怕酸: "✨", 一點點: "🙂", 很怕酸: "🛟" }}
-            />
-          </CardContent>
-        </Card>
-      </div>
+          <QuestionGroup
+            title="3. 你怕酸嗎？"
+            hint="這一題不在測你專不專業，只是幫你避開不喜歡的焙度方向。"
+            options={acidOptions}
+            value={acid}
+            onChange={(value) => setAcid(value as Acid)}
+            emojiMap={{ 不怕酸: "✨", 一點點: "🙂", 很怕酸: "🛟" }}
+          />
+        </CardContent>
+      </Card>
 
-      <div className="space-y-6 lg:sticky lg:top-6 lg:self-start">
-        <Card className="border border-stone-900/10 bg-stone-950 text-stone-50 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.8)]">
-          <CardHeader className="space-y-3">
-            <Badge className="bg-amber-300 text-stone-900">推薦摘要</Badge>
-            <CardTitle className="text-2xl">{ready ? `今天最適合你的是 ${lead?.name ?? "這杯"}` : "先回答 3 個問題，我幫你配豆"}</CardTitle>
-            <CardDescription className="text-stone-300">
-              {ready && acid ? acidCopy[acid] : "完成後會看到 Top 3 推薦、風味理由，以及適合你的點餐方向。"}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-5">
-            <div className="flex flex-wrap gap-2">
-              <SummaryPill label="風味" value={flavor ?? "待選擇"} />
-              <SummaryPill label="口感" value={body ?? "待選擇"} />
-              <SummaryPill label="酸值偏好" value={acid ?? "待選擇"} />
-            </div>
+      <Card className="border border-stone-900/10 bg-stone-950 text-stone-50 shadow-[0_30px_90px_-45px_rgba(0,0,0,0.82)] lg:sticky lg:top-6">
+        <CardHeader className="space-y-4">
+          <Badge className="bg-amber-300 text-stone-900">推薦摘要</Badge>
+          <CardTitle className="text-2xl sm:text-3xl">{ready ? `今天最適合你的是 ${lead?.name ?? "這杯"}` : "先回答 3 個問題，我幫你把選擇變少"}</CardTitle>
+          <CardDescription className="text-stone-300">
+            {ready && acid ? acidCopy[acid] : "你回答完後，右邊會出現 Top 3 推薦、推薦理由，以及可以直接去點餐的入口。"}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-5">
+          <div className="flex flex-wrap gap-2">
+            <SummaryPill label="風味" value={flavor ?? "待選擇"} />
+            <SummaryPill label="口感" value={body ?? "待選擇"} />
+            <SummaryPill label="酸值偏好" value={acid ?? "待選擇"} />
+          </div>
 
-            {lead ? (
-              <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-                <div className="relative aspect-[4/3]">
-                  <Image src={lead.image} alt={lead.name} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-5">
-                    <p className="text-sm text-amber-200">今日首選</p>
-                    <h3 className="text-2xl font-semibold">{lead.name}</h3>
-                    <p className="mt-2 text-sm leading-6 text-stone-200">{lead.description}</p>
-                  </div>
+          {lead ? (
+            <div className="rounded-3xl border border-white/10 bg-white/6 p-5">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm text-amber-200">今日首選</p>
+                  <h3 className="mt-2 text-3xl font-semibold">{lead.name}</h3>
                 </div>
+                <Badge variant="outline" className="border-white/20 bg-white/10 text-white">
+                  $ {lead.price}
+                </Badge>
               </div>
-            ) : null}
+              <p className="mt-4 text-sm leading-7 text-stone-200">{lead.description}</p>
+              <p className="mt-3 text-sm leading-7 text-stone-300">適合你：{lead.bestFor}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {lead.tags.map((tag) => (
+                  <span key={tag} className="rounded-full bg-white/10 px-3 py-1 text-xs text-stone-100">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : null}
 
-            <div className="grid gap-3">
-              {topResults.map(({ bean, score }, index) => (
-                <div key={bean.id} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <p className="text-sm text-stone-300">Top {index + 1}</p>
-                      <h4 className="text-lg font-semibold">{bean.name}</h4>
-                    </div>
-                    <Badge variant="outline" className="border-white/20 bg-white/10 text-white">
-                      $ {bean.price}
-                    </Badge>
+          <div className="grid gap-3">
+            {topResults.map(({ bean, score }, index) => (
+              <div key={bean.id} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-sm text-stone-300">Top {index + 1}</p>
+                    <h4 className="text-lg font-semibold">{bean.name}</h4>
                   </div>
-                  <p className="mt-2 text-sm leading-6 text-stone-300">{bean.bestFor}</p>
-                  <div className="mt-3 flex flex-wrap gap-2 text-xs text-stone-200">
-                    <span className="rounded-full bg-white/10 px-3 py-1">{bean.flavor}</span>
-                    <span className="rounded-full bg-white/10 px-3 py-1">{bean.roast}</span>
-                    <span className="rounded-full bg-white/10 px-3 py-1">{bean.body}</span>
-                    <span className="rounded-full bg-white/10 px-3 py-1">匹配度 {score}</span>
-                  </div>
+                  <Badge variant="outline" className="border-white/20 bg-white/10 text-white">
+                    匹配度 {score}
+                  </Badge>
                 </div>
-              ))}
-            </div>
+                <div className="mt-3 flex flex-wrap gap-2 text-xs text-stone-200">
+                  <span className="rounded-full bg-white/10 px-3 py-1">{bean.flavor}</span>
+                  <span className="rounded-full bg-white/10 px-3 py-1">{bean.roast}</span>
+                  <span className="rounded-full bg-white/10 px-3 py-1">{bean.body}</span>
+                  <span className="rounded-full bg-white/10 px-3 py-1">$ {bean.price}</span>
+                </div>
+                <p className="mt-3 text-sm leading-6 text-stone-300">{bean.bestFor}</p>
+              </div>
+            ))}
+          </div>
 
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Link href={beanOrderLink} target="_blank" rel="noopener noreferrer" className="block flex-1">
-                <ShimmerButton className="h-12 w-full text-sm font-semibold" background="rgba(214, 143, 63, 1)">
-                  直接去 iCHEF 點餐
-                </ShimmerButton>
-              </Link>
-              <Link
-                href={beanReserveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-full border border-white/15 px-5 text-sm font-medium text-white transition hover:bg-white/10"
-              >
-                先預約座位
-              </Link>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-7 text-stone-300">
+            <p className="text-amber-200">店內建議話術</p>
+            <p className="mt-2">「你先跟我說喜歡什麼味道、想要清爽還是厚一點，我用 AI 幫你配一支最適合今天的豆子。」</p>
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link href={beanOrderLink} target="_blank" rel="noopener noreferrer" className="block flex-1">
+              <ShimmerButton className="h-12 w-full text-sm font-semibold" background="rgba(214, 143, 63, 1)">
+                直接去 iCHEF 點餐
+              </ShimmerButton>
+            </Link>
+            <Link
+              href={beanReserveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-white/15 px-5 text-sm font-medium text-white transition hover:bg-white/10"
+            >
+              先預約座位
+            </Link>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   )
 }
